@@ -29,7 +29,6 @@ def get_people(w3):
         st.write("Hourly Rate per Ether: ", db_list[number][3], "eth")
         st.text(" \n")
 
-
 # Streamlit application headings
 st.markdown("# Fintech Finder!")
 st.markdown("## Hire A Fintech Professional!")

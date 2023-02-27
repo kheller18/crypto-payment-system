@@ -26,9 +26,14 @@
 
   If you would like to clone the repository, type "git clone https://github.com/kheller18/crypto-payment-system.git". In the terminal, with the Anaconda dev environment activated, install the following packages and dependencies before running the application. To understand how to install these, refer to the [Usage](#2-usage)
 
-  * [Pandas](https://pandas.pydata.org/docs/) (1.3.5) - Data analysis
+  * [dotenv](https://pypi.org/project/python-dotenv/) (1.0.0) - Reads key value pairs in .env
 
   * [Streamlit](https://streamlit.io/) (1.18.1) - Web interface
+
+  * [Web3](https://web3py.readthedocs.io/en/v5/) (5.17.0) - Python library to interact with Etherium
+
+  * [bip44](https://pypi.org/project/bip44/) (0.1.3) - Creates wallets from mnemonic phrases
+
 
 ---
 
@@ -37,8 +42,10 @@
   After cloning the repository locally, you'll need to have the packages listed in [Installation](#1-installation) installed on your machine. To do so, you'll need to activate your conda dev environment and running the following commands:
 
       ```
-      pip install pandas
+      pip install python-dotenv
       pip install streamlit
+      pip install web3
+      pip install bip44
 
       ```
 
