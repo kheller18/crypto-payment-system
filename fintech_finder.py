@@ -6,19 +6,6 @@ from web3 import Web3
 from crypto_wallet import generate_account, get_balance, send_transaction
 w3 = Web3(Web3.HTTPProvider('HTTP://127.0.0.1:7545'))
 
-
-# 4. Within the Streamlit sidebar section of code, create a variable named
-# `account`. Set this variable equal to a call on the `generate_account`
-# function. This function will create the Fintech Finder customer’s (in this
-# case, your) HD wallet and Ethereum account.
-
-# 5. Within this same section of the `fintech_finder.py` file, define a
-# new `st.sidebar.write` function that will display the balance of the
-# customer’s account. Inside this function, call the `get_balance` function
-# and pass it your Ethereum `account.address`.
-
-
-################################################################################
 # Fintech Finder Candidate Information
 
 # Database of Fintech Finder candidates including their name, digital address, rating and hourly cost per Ether.
@@ -33,7 +20,6 @@ candidate_database = {
 # A list of the FinTech Finder candidates first names
 people = ["Lane", "Ash", "Jo", "Kendall"]
 
-
 def get_people(w3):
     """Display the database of Fintech Finders candidate information."""
     db_list = list(candidate_database.values())
@@ -46,39 +32,23 @@ def get_people(w3):
         st.write("Hourly Rate per Ether: ", db_list[number][3], "eth")
         st.text(" \n")
 
-################################################################################
-# Streamlit Code
 
 # Streamlit application headings
 st.markdown("# Fintech Finder!")
 st.markdown("## Hire A Fintech Professional!")
 st.text(" \n")
 
-################################################################################
 # Streamlit Sidebar Code - Start
-
 st.sidebar.markdown("## Client Account Address and Ethernet Balance in Ether")
 
 #  Call the `generate_account` function and save it as the variable `account`
 account = generate_account()
 
-##########################################
-
 # Write the client's Ethereum account address to the sidebar
 st.sidebar.write(account.address)
 
-##########################################
-# Step 1 - Part 5:
-# Define a new `st.sidebar.write` function that will display the balance of the
-# customer’s account. Inside this function, call the `get_balance` function and
-#  pass it your Ethereum `account.address`.
-
-# @TODO
-# Call `get_balance` function and pass it your account address
-# Write the returned ether balance to the sidebar
+# Streamlit sidebar displaying balance
 st.sidebar.write(get_balance(w3, account.address))
-
-##########################################
 
 # Create a select box to chose a FinTech Hire candidate
 person = st.sidebar.selectbox('Select a Person', people)
@@ -86,6 +56,7 @@ person = st.sidebar.selectbox('Select a Person', people)
 # Create a input field to record the number of hours the candidate worked
 hours = st.sidebar.number_input("Number of Hours")
 
+# Heading for candidate name, hourly rate, and eth address
 st.sidebar.markdown("## Candidate Name, Hourly Rate, and Ethereum Address")
 
 # Identify the FinTech Hire candidate
