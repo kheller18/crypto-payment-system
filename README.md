@@ -47,6 +47,8 @@ We are able to see that our application is fully functional.
 
   * [bip44](https://pypi.org/project/bip44/) (0.1.3) - Creates wallets from mnemonic phrases
 
+  * [Ganache](https://trufflesuite.com/ganache/) (7.7.5) - Blockchain used for testing
+
 
 ---
 
