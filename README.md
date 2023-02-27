@@ -5,6 +5,19 @@
 ---
 
 ## Description
+This application purpose was to develop a crypto payment system. While still in development mode, we are using a testnet instead of real Etherium being transferred, but the functionality is complete.  The payment system is integrated into hiring a Fintech Professional from a list of candidates. When the application is opened using Streamlit, the user lands on the welcome page, which is seen below.
+![home page](Images/app/home_page.png)
+
+The user can select who they would like to hire in the left panel and the number of hours they will require out of the candidate. The candidate then is shown below with the hourly rate (in Etherium) and the total wage for the job is then displayed below. The user clicks "Send Transaction" when they have decided on who they want to hire, which transfers the Etherium to the wallet address the candidate provided. The transaction hash is then displayed below the "Send Transaction" button. We can see the full process of the app below.
+![candidate selection](Gifs/send-transaction.gif)
+
+To verify the transaction went through correctly, we can use Ganache, which is our testing platform to see the transaction details. When we first open Ganache, we can see that our account balance is lower (started with 100 Eth).
+![eth balance](Images/app/eth_balance.png)
+
+Then we, can inspect the transaction from the transaciton hash that was passed back to the user when the transaction went through.
+![transaction details](Images/app/transaction_details.png)
+
+We are able to see that our application is fully functional.
 
 ---
 
