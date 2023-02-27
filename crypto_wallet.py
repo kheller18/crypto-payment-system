@@ -2,15 +2,14 @@
 import os
 import requests
 from dotenv import load_dotenv
-load_dotenv()
 from bip44 import Wallet
 from web3 import Account
 from web3 import middleware
 from web3.gas_strategies.time_based import medium_gas_price_strategy
+load_dotenv()
 
 # Generates an account from mnemonic phrase in .env
 def generate_account():
-    """Create a digital wallet and Ethereum account from a mnemonic seed phrase."""
     # Fetch mnemonic from environment variable.
     mnemonic = os.getenv("MNEMONIC")
 
@@ -27,7 +26,6 @@ def generate_account():
 
 # Gets balance based on address
 def get_balance(w3, address):
-    """Using an Ethereum account address access the balance of Ether"""
     # Get balance of address in Wei
     wei_balance = w3.eth.get_balance(address)
 
@@ -39,7 +37,6 @@ def get_balance(w3, address):
 
 # Sends transaction
 def send_transaction(w3, account, to, wage):
-    """Send an authorized transaction to the Ganache blockchain."""
     # Set gas price strategy
     w3.eth.setGasPriceStrategy(medium_gas_price_strategy)
 

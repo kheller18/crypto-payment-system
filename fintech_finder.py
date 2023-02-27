@@ -6,10 +6,7 @@ from web3 import Web3
 from crypto_wallet import generate_account, get_balance, send_transaction
 w3 = Web3(Web3.HTTPProvider('HTTP://127.0.0.1:7545'))
 
-# Fintech Finder Candidate Information
-
-# Database of Fintech Finder candidates including their name, digital address, rating and hourly cost per Ether.
-# A single Ether is currently valued at $1,500
+# "Database" of Fintech Finder candidates including their name, digital address, rating and hourly cost per Ether.
 candidate_database = {
     "Lane": ["Lane", "0xaC8eB8B2ed5C4a0fC41a84Ee4950F417f67029F0", "4.3", .20, "Images/lane.jpeg"],
     "Ash": ["Ash", "0x2422858F9C4480c2724A309D58Ffd7Ac8bF65396", "5.0", .33, "Images/ash.jpeg"],
@@ -20,8 +17,8 @@ candidate_database = {
 # A list of the FinTech Finder candidates first names
 people = ["Lane", "Ash", "Jo", "Kendall"]
 
+# Function to display candidates in streamlit
 def get_people(w3):
-    """Display the database of Fintech Finders candidate information."""
     db_list = list(candidate_database.values())
 
     for number in range(len(people)):
@@ -80,14 +77,13 @@ st.sidebar.write(candidate_address)
 # Write the Fintech Finder candidate's name to the sidebar
 st.sidebar.markdown("## Total Wage in Ether")
 
-# Calculate total `wage` for the candidate by multiplying the candidate’s hourly
-# rate from the candidate database (`candidate_database[person][3]`) by the
-# value of the `hours` variable
+# Calculate total `wage` for the candidate
 wage = candidate_database[person][3] * hours
 
 # Write the `wage` calculation to the Streamlit sidebar
 st.sidebar.write(wage)
 
+# If "Send Transaction" button clicked
 if st.sidebar.button("Send Transaction"):
 
     # send a transaction and store the hash
@@ -103,5 +99,4 @@ if st.sidebar.button("Send Transaction"):
     st.balloons()
 
 # The function that starts the Streamlit application
-# Writes FinTech Finder candidates to the Streamlit page
 get_people(w3)
