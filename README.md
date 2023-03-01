@@ -37,7 +37,7 @@ We are able to see that our application is fully functional.
 
 ## 1. Installation
 
-  If you would like to clone the repository, type "git clone https://github.com/kheller18/crypto-payment-system.git". In the terminal, with the Anaconda dev environment activated, install the following packages and dependencies before running the application. To understand how to install these, refer to the [Usage](#2-usage)
+  If you would like to clone the repository, type `git clone https://github.com/kheller18/crypto-payment-system.git`. In the terminal, with the Anaconda dev environment activated, install the following packages and dependencies before running the application. To understand how to install these, refer to the [Usage](#2-usage)
 
   * [dotenv](https://pypi.org/project/python-dotenv/) (1.0.0) - Reads key value pairs in .env
 
@@ -107,7 +107,7 @@ We are able to see that our application is fully functional.
 ---
 
 ## 6. Deployment
-  + There is currently no live deployment of this app on a common server. To be able to run this app locally, navigate to the root directory and type "streamlit run fintech_finder.py". This should open the app automatically, but if it doesn't, go to [localhost 8501](http://localhost:8501/) in your browser.
+  + There is currently no live deployment of this app on a common server. To be able to run this app locally, navigate to the root directory and type `streamlit run fintech_finder.py`. This should open the app automatically, but if it doesn't, go to [localhost 8501](http://localhost:8501/) in your browser.
 
 ---
 
